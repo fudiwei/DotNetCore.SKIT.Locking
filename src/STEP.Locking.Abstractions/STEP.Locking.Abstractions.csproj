@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard1.6; netstandard2.0; netstandard2.1; net35; net45;</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <TieredCompilation>true</TieredCompilation>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>STEP.Locking.Abstractions</PackageId>
+        <Version>1.0.0</Version>
+        <Description>Abstractions of naming lock.</Description>
+        <Authors>Fu Diwei</Authors>
+    </PropertyGroup>
+
+</Project>

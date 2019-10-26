@@ -33,7 +33,7 @@ namespace STEP.Locking.Redis
         /// </summary>
         /// <param name="redisConnectionString"></param>
         public RedisLockFactory(string redisConnectionString)
-            : this(ConnectionMultiplexer.Connect(redisConnectionString))
+            : this(ConnectionMultiplexer.Connect(redisConnectionString), true)
         {
             _disposeConnection = true;
         }
@@ -43,7 +43,7 @@ namespace STEP.Locking.Redis
         /// </summary>
         /// <param name="redisConnectionOptions"></param>
         public RedisLockFactory(ConfigurationOptions redisConnectionOptions)
-            : this(ConnectionMultiplexer.Connect(redisConnectionOptions))
+            : this(ConnectionMultiplexer.Connect(redisConnectionOptions), true)
         {
             _disposeConnection = true;
         }

@@ -19,7 +19,7 @@ namespace STEP.Locking.UnitTests
             using (ILockFactory lockFactory = new SemaphoreLockFactory())
             {
                 lockFactory.DefaultTimeout = TimeSpan.FromSeconds(5);
-                Assert.Equal(LockScopes.ApplicationProcess, lockFactory.Scope);
+                Assert.Equal(LockScopes.ApplicationDomain, lockFactory.Scope);
 
                 using (ILock lock1 = lockFactory.CreateAndWait(RESOURCE_FOO))
                 {

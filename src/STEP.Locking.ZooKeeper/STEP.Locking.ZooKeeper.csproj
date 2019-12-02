@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard1.6; netstandard2.0; netstandard2.1; net45;</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0; netstandard2.1; net45;</TargetFrameworks>
         <TieredCompilation>true</TieredCompilation>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
-        <PackageReference Include="ZooKeeperNetEx.Recipes" Version="3.4.12.1" />
+        <PackageReference Include="ZooKeeperNetEx.Recipes" Version="3.4.12.4" />
     </ItemGroup>
 
     <ItemGroup>

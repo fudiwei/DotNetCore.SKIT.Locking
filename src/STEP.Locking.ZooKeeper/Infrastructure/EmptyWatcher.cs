@@ -15,10 +15,10 @@ namespace STEP.Locking.ZooKeeper
 
         public override Task process(WatchedEvent e)
         {
-#if NETSTANDARD
-            return Task.CompletedTask;
+#if NETFRAMEWORK
+            return Task.Run(() => { });
 #else
-            return Task.Run(() => {});
+            return Task.CompletedTask;
 #endif
         }
     }

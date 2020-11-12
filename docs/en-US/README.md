@@ -2,7 +2,7 @@
 
 An easy way to set up and use system-wide or fully-distributed locks.
 
-It is designed to work with .NET Core and .NET Framework both, and it targets .NET Standard / .NET 5.
+It is designed to work with .NET Core and .NET Framework both, and it targets .NET Standard.
 
 ---
 

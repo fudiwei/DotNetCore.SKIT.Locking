@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' Or '$(TargetFramework)' == 'netstandard2.1' Or '$(TargetFramework)' == 'net461'  Or '$(TargetFramework)' == 'net5.0'">
-        <PackageReference Include="StackExchange.Redis" Version="2.1.58" />
+        <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
     </ItemGroup>
 
     <ItemGroup>

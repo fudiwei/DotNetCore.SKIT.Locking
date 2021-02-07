@@ -4,7 +4,7 @@
 
 ### Cross Platform Support
 
-**STEP.Locking** package contains different versions of the library:
+**SKIT.Locking** package contains different versions of the library:
 
 * .NET Framework 3.5
 * .NET Framework 4.5
@@ -13,7 +13,7 @@
 * .NET Standard 2.1
 * .NET 5.0
 
-This means that you can use **STEP.Locking** on:
+This means that you can use **SKIT.Locking** on:
 
 * Windows using .NET Framework
 * Windows using .NET Core

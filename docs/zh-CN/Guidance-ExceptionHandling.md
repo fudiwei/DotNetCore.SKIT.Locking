@@ -4,7 +4,7 @@
 
 ### 异常处理
 
-**STEP.Locking** 会在尝试取得锁期间发生错误时抛出一个 *LockException*。
+**SKIT.Locking** 会在尝试取得锁期间发生错误时抛出一个 *LockException*。
 
 ``` CSharp
 try 

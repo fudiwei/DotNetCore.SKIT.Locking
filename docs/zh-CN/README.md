@@ -1,4 +1,4 @@
-# STEP.Locking
+# SKIT.Locking
 
 一个简单易用的单机或分布式的锁。
 

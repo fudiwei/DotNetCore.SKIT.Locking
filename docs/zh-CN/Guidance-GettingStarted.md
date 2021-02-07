@@ -4,11 +4,11 @@
 
 ### 开始入门
 
-**STEP.Locking** 的核心是通过 *ILockFactory* 创建的 *ILock* 对象。
+**SKIT.Locking** 的核心是通过 *ILockFactory* 创建的 *ILock* 对象。
 
 因为 *ILockFactory* 有一定开销，因此它被设计为被整个应用程序域共享和重用的。强烈建议使用单例模式，而不是在每次操作中不停的创建该对象的实例。该对象是线程安全的。
 
-**STEP.Locking** 为每种锁定义了一个抽象层，并根据它们的作用域分为几种类型：
+**SKIT.Locking** 为每种锁定义了一个抽象层，并根据它们的作用域分为几种类型：
 
 * 应用程序域级：这类锁只用于同一个 .NET 应用程序域的线程同步。
 * 操作系统级：这类锁可以在单机环境下用于进程间同步。
@@ -21,7 +21,7 @@
 首先，你应该实例化一个 *ILockFactory* 对象。
 
 ``` CSharp
-using STEP.Locking;
+using SKIT.Locking;
 
 var lockFactory = new SampleLockFactory();
 lockFactory.DefaultTimeout = TimeSpan.FromSeconds(30);
@@ -107,7 +107,7 @@ var @lock = lockFactory.Create("SampleLockName", TimeSpan.FromSeconds(30), TimeS
 Semaphore 锁是一种应用程序域级的锁，它基于 *System.Threading.SemaphoreSlim*。
 
 ``` CSharp
-using STEP.Locking.Semaphore;
+using SKIT.Locking.Semaphore;
 
 var lockFactory = new SemaphoreLockFactory();
 ```
@@ -121,7 +121,7 @@ Redis 锁是为分布式环境设计的，在单位时间内想要确保只有�
 该功能依赖一个非常优秀的 .NET 库 —— [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis)。
 
 ``` CSharp
-using STEP.Locking.Redis;
+using SKIT.Locking.Redis;
 
 var lockFactory = new RedisLockFactory("127.0.0.1:6379");
 ```
@@ -140,7 +140,7 @@ var lockFactory = new RedisLockFactory(redis, true);
 Redis 锁也是为分布式环境设计得，它基于 Apache ZooKeeper 的临时顺序节点。
 
 ``` CSharp
-using STEP.Locking.ZooKeeper;
+using SKIT.Locking.ZooKeeper;
 
 string connString = "127.0.0.1:2181";
 var lockFactory = new ZooKeeperLockFactory(connString);

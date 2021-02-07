@@ -1,4 +1,4 @@
-# STEP.Locking
+# SKIT.Locking
 
 ## Documentation
 

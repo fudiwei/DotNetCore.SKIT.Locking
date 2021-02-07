@@ -4,7 +4,7 @@
 
 ### Exception Handling
 
-**STEP.Locking** throws a *LockException* if an error has occured on lock.
+**SKIT.Locking** throws a *LockException* if an error has occured on lock.
 
 ``` CSharp
 try 

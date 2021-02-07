@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0; netstandard2.1; net45; net5.0;</TargetFrameworks>
+        <TieredCompilation>true</TieredCompilation>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>SKIT.Locking.ZooKeeper</PackageId>
+        <Version>1.0.0</Version>
+        <Description>A implementation of SKIT.Locking based on ZooKeeper.</Description>
+        <Authors>Fu Diwei</Authors>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+        <PackageReference Include="ZooKeeperNetEx.Recipes" Version="3.4.12" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
+        <PackageReference Include="ZooKeeperNetEx.Recipes" Version="3.4.12.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SKIT.Locking.Abstractions\SKIT.Locking.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

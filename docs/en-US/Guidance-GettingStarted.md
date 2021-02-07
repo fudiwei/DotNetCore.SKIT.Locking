@@ -4,11 +4,11 @@
 
 ### Getting Started
 
-The central object in **STEP.Locking** is the *ILock* class. You also need a *ILockFactory* to create *ILock*.
+The central object in **SKIT.Locking** is the *ILock* class. You also need a *ILockFactory* to create *ILock*.
 
 Because the *ILockFactory* does a lot, it is designed to be shared and reused between callers. You should not create a *ILockFactory* per operation. It is fully thread-safe and ready for this usage.
 
-**STEP.Locking** defines an abstraction layer for each type of locks, and divide locks into several types based on their scopes:
+**SKIT.Locking** defines an abstraction layer for each type of locks, and divide locks into several types based on their scopes:
 
 * ApplicationDomain: The locks are great for synchronizing between threads in the same .NET application domain.
 * OperationSystem: The locks can be used between processes in a single machine.
@@ -21,7 +21,7 @@ Because the *ILockFactory* does a lot, it is designed to be shared and reused be
 You should create a *ILockFactory* at first:
 
 ``` CSharp
-using STEP.Locking;
+using SKIT.Locking;
 
 var lockFactory = new SampleLockFactory();
 lockFactory.DefaultTimeout = TimeSpan.FromSeconds(30);
@@ -111,7 +111,7 @@ var @lock = lockFactory.Create("SampleLockName", TimeSpan.FromSeconds(30), TimeS
 The Semaphore lock is great for synchronizing between threads in the same .NET application domains. It is based on *System.Threading.SemaphoreSlim*.
 
 ``` CSharp
-using STEP.Locking.Semaphore;
+using SKIT.Locking.Semaphore;
 
 var lockFactory = new SemaphoreLockFactory();
 ```
@@ -125,7 +125,7 @@ The Redis lock is useful for ensuring only one process is using a particular res
 This uses an awesome .NET library called [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis).
 
 ``` CSharp
-using STEP.Locking.Redis;
+using SKIT.Locking.Redis;
 
 var lockFactory = new RedisLockFactory("127.0.0.1:6379");
 ```
@@ -144,7 +144,7 @@ var lockFactory = new RedisLockFactory(redis, true);
 The ZooKeeper lock is another kind of locks which designed for the distributed environment. It is based on *EPHEMERAL_SEQUENTIAL* in Apache ZooKeeper.
 
 ``` CSharp
-using STEP.Locking.ZooKeeper;
+using SKIT.Locking.ZooKeeper;
 
 string connString = "127.0.0.1:2181";
 var lockFactory = new ZooKeeperLockFactory(connString);

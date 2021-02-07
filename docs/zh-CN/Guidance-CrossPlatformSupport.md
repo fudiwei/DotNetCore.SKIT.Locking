@@ -4,7 +4,7 @@
 
 ### 跨平台支持
 
-**STEP.Locking** 包含多个版本的库：
+**SKIT.Locking** 包含多个版本的库：
 
 * .NET Framework 3.5
 * .NET Framework 4.5
@@ -13,7 +13,7 @@
 * .NET Standard 2.1
 * .NET 5.0
 
-这意味着你可以在如下环境使用 **STEP.Locking**：
+这意味着你可以在如下环境使用 **SKIT.Locking**：
 
 * 在 Windows 中使用 .NET Framework；
 * 在 Windows 中使用 .NET Core；

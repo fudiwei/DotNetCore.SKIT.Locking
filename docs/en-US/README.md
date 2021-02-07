@@ -1,4 +1,4 @@
-# STEP.Locking
+# SKIT.Locking
 
 An easy way to set up and use system-wide or fully-distributed locks.
 

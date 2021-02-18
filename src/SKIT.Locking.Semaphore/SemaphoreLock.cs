@@ -158,7 +158,8 @@ namespace SKIT.Locking.Semaphore
         /// <returns></returns>
         public async Task<bool> CheckLockedAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await Task.Run(CheckLocked, cancellationToken);
+            var func = new Func<bool>(CheckLocked);
+            return await Task.Factory.FromAsync((callback, obj) => func.BeginInvoke(callback, obj), func.EndInvoke, null);
         }
 #endif
         #endregion

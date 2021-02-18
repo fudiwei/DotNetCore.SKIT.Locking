@@ -16,7 +16,7 @@ namespace SKIT.Locking.ZooKeeper
         public override Task process(WatchedEvent e)
         {
 #if NETFRAMEWORK
-            return Task.Run(() => { });
+            return Task.Delay(0);
 #else
             return Task.CompletedTask;
 #endif
